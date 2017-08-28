@@ -18,10 +18,23 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 0.1.0
  */
 function the_gutenberg_project() {
+	// Somehow get post ID.
+	global $post;
+	$post_id = $post->ID;
+	$meta_box_api_url = get_admin_url();
+	$meta_box_api_url = $meta_box_api_url . 'post.php';
+	$meta_box_api_url = add_query_arg( array(
+		'post'    => $post_id,
+		'metabox' => 'some-location',
+		'action'  => 'edit',
+	), $meta_box_api_url );
+
 	?>
 	<div class="gutenberg">
 		<section id="editor" class="gutenberg__editor"></section>
 	</div>
+	<!-- Classic Metabox iFrame -->
+	<iframe id="gutenberg-metabox-iframe" class="gutenberg-metabox-iframe" style="width: 100%;" src="<?php echo esc_url_raw( $meta_box_api_url ); ?>"></iframe>
 	<?php
 }
 
