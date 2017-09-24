@@ -76,7 +76,7 @@ registerBlockType( 'core/button', {
 					formattingControls={ [ 'bold', 'italic', 'strikethrough' ] }
 					keepPlaceholderOnFocus
 				/>
-				{ focus &&
+				{focus &&
 					<form
 						className="blocks-format-toolbar__link-modal"
 						onSubmit={ ( event ) => event.preventDefault() }>
@@ -87,7 +87,7 @@ registerBlockType( 'core/button', {
 						<IconButton icon="editor-break" label={ __( 'Apply' ) } type="submit" />
 					</form>
 				}
-				{ focus &&
+				{focus &&
 					<InspectorControls key="inspector">
 						<ColorPalette
 							value={ color }
@@ -108,11 +108,11 @@ registerBlockType( 'core/button', {
 		const { url, text, title, align, color } = attributes;
 
 		return (
-			<div className={ `align${ align }` } style={ { backgroundColor: color } }>
-				<a href={ url } title={ title }>
-					{ text }
+			<p className={ `align${ align }` }>
+				<a href={ url } title={ title } style={ { backgroundColor: color } }>
+					{text}
 				</a>
-			</div>
+			</p>
 		);
 	},
 } );

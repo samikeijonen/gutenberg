@@ -11,6 +11,21 @@ $blocks-button__height: 46px;
 }
 
 .wp-block-button {
+	background-color: $blue-medium-400;
+	border-radius: $blocks-button__height / 2;
+	color: $white;
+	cursor: default;
+	display: inline-block;
+	font-size: $big-font-size;
+	height: $blocks-button__height;
+	line-height: $blocks-button__height;
+	margin: 0;
+	padding: 0 24px;
+	position: relative;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+
 	.blocks-format-toolbar__link-modal {
 		z-index: 2;
 		top: $blocks-button__height + 2px;
