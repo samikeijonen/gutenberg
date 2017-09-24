@@ -76,7 +76,7 @@ registerBlockType( 'core/button', {
 					formattingControls={ [ 'bold', 'italic', 'strikethrough' ] }
 					keepPlaceholderOnFocus
 				/>
-				{focus &&
+				{ focus &&
 					<form
 						className="blocks-format-toolbar__link-modal"
 						onSubmit={ ( event ) => event.preventDefault() }>
@@ -87,7 +87,7 @@ registerBlockType( 'core/button', {
 						<IconButton icon="editor-break" label={ __( 'Apply' ) } type="submit" />
 					</form>
 				}
-				{focus &&
+				{ focus &&
 					<InspectorControls key="inspector">
 						<ColorPalette
 							value={ color }
