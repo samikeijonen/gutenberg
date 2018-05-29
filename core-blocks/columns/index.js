@@ -97,7 +97,9 @@ export const settings = {
 
 		return (
 			<div className={ `has-${ columns }-columns` }>
-				<InnerBlocks.Content />
+				<div className="wp-block-column">
+					<InnerBlocks.Content />
+				</div>
 			</div>
 		);
 	},
